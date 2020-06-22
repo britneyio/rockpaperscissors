@@ -46,13 +46,11 @@
                     case "rock":
                         return "tie!";
                     case "paper":
-                        userPoints--;
                         computerPoints++;
                         return "You lose. Paper beats Rock.";
                         
                     case "scissors":
                         userPoints++;
-                        computerPoints--;
                         return "You win. Rock beats Scissors.";
                         
                 }
@@ -61,13 +59,11 @@
                 switch(computerSelection){
                     case "rock":
                         userPoints++;
-                        computerPoints--;
                         return "You win. Paper beats Rock.";
 
                     case "paper":
                         return "tie!";
                     case "scissors":
-                        userPoints--;
                         computerPoints++;
                         return "You lose. Scissors beats Paper.";
                 }
@@ -75,11 +71,9 @@
             else{
                 switch(computerSelection){
                     case "rock":
-                        userPoints--;
                         computerPoints++;
                         return "You lose. Rock beats Scissors";
                     case "paper":
-                        computerPoints--;
                         userPoints++;
                         return "You win. Scissors beats PAper.";
                     case "scissors":
@@ -97,7 +91,7 @@
             document.getElementById("winner").innerHTML = playRound(element, computerSelected);
             document.getElementById("cpoints").innerHTML = "Computer Points: " + computerPoints;
             document.getElementById("ppoints").innerHTML = "User Points: " + userPoints;
-            if(userPoints > 3 || computerPoints > 3){
+            if(userPoints > 5 || computerPoints > 5){
 
                 if(userPoints > computerPoints){
                     alert("You win the entire game!");
