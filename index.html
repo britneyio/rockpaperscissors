@@ -1,8 +1,4 @@
-<!DOCTYPE html>
-
-<html>
-
-<head>
+<html><head>
     <title>Rock Paper Scissors</title>
     
     <style>
@@ -10,13 +6,26 @@
             margin:auto;
             width:50%;
             font-family:sans-serif;
+            padding-left:15rem;
         }
+
+        #innermain{
+        padding-left:6em;
+}
     </style>
 </head>
 
-<body>
+<body data-gr-c-s-loaded="true"><div id="StayFocusd-infobar" style="display:none;">
+    <img src="chrome-extension://laankejkbhbdhmipfmgcngdelahlfoji/common/img/eye_19x19_red.png">
+    <span id="StayFocusd-infobar-msg"></span>
+    <span id="StayFocusd-infobar-links">
+        <a id="StayFocusd-infobar-never-show">hide forever</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+        <a id="StayFocusd-infobar-hide">hide once</a>
+    </span>
+</div>
     <div id="main">
     <h1>Rock Paper Scissors Game</h1>
+<div id="innermain">
     <p>Rules: First to 5 points wins!</p>
     <h3 id="ppoints">Player Points:</h3>
     <h3 id="cpoints"> Computer Points:</h3>
@@ -25,6 +34,8 @@
     <button onclick="editPageElements('scissors',computerPlay())">Scissors</button>
     <h3 id="pc">Computer chose: </h3>
     <h3 id="winner"></h3>
+
+    </div>
     </div>
 
 
@@ -108,5 +119,6 @@
             
         }
     </script>
-</body>
-</html>
+
+
+</body></html>
