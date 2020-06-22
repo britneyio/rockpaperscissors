@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Rock Paper Scissors</title>
+</head>
+
+<body>
+
+    <h1>Rock Paper Scissors Game</h1>
+    <p>Rules: First to 5 points wins!</p>
+    <h2 id="round">Round #</h2>
+    <h3 id="ppoints">Player Points:</h3>
+    <h3 id="cpoints"> Computer Points:</h3>
+    <button onclick="parts('rock',computerPlay())">Rock</button>
+    <button onclick="parts('paper',computerPlay())">Paper</button>
+    <button onclick="parts('scissors',computerPlay())">Scissors</button>
+    <h3 id="pc">Computer chose: </h3>
+    <h3 id="winner"></h3>
+
+
+    <script type="text/javascript">
+  
+        function computerPlay(){
+            play = Math.floor(Math.random()*3);
+            if(play == 0){
+                return "rock";
+            }
+            else if(play == 1){
+                return "paper";
+            }
+            else{
+                return "scissors";
+            }
+            
+        }
+
+        let userPoints = 0;
+        let computerPoints = 0;
+        function Round(playerSelection, computerSelection){
+            playerSelection = playerSelection.toLowerCase();
+            if(playerSelection == "rock"){
+                switch(computerSelection){
+                    case "rock":
+                        return "tie!";
+                    case "paper":
+                        userPoints--;
+                        computerPoints++;
+                        return "You lose. Paper beats Rock.";
+                        
+                    case "scissors":
+                        userPoints++;
+                        computerPoints--;
+                        return "You win. Rock beats Scissors.";
+                        
+                }
+            }
+            else if(playerSelection == "paper"){
+                switch(computerSelection){
+                    case "rock":
+                        userPoints++;
+                        computerPoints--;
+                        return "You win. Paper beats Rock.";
+
+                    case "paper":
+                        return "tie!";
+                    case "scissors":
+                        userPoints--;
+                        computerPoints++;
+                        return "You lose. Scissors beats Paper.";
+                }
+            }
+            else{
+                switch(computerSelection){
+                    case "rock":
+                        userPoints--;
+                        computerPoints++;
+                        return "You lose. Rock beats Scissors";
+                    case "paper":
+                        computerPoints--;
+                        userPoints++;
+                        return "You win. Scissors beats PAper.";
+                    case "scissors":
+                        return "tie!";
+                }
+            }
+     
+
+        }
+
+
+        function parts(element,computerSelected){
+            
+            document.getElementById("pc").innerHTML = "Computer's choice: " + computerSelected;
+            document.getElementById("winner").innerHTML = Round(element, computerSelected);
+            document.getElementById("cpoints").innerHTML = "Computer Points: " + computerPoints;
+            document.getElementById("ppoints").innerHTML = "User Points: " + userPoints;
+            if(userPoints > 3 || computerPoints > 3){
+
+                if(userPoints > computerPoints){
+                    alert("You win the entire game!");
+                }
+                else{
+                    alert("You lose the entire game!");
+                }
+                }
+            
+        }
+
+        
+           
+            
+
+            
+            
+            // document.getElementById("start").innerHTML = "Start game";
+            // if(document.getElementById("start").innerHTML == "Start game"){
+            //     document.getElementById("pc").innerHTML = "Computer's choice: ";
+            //     document.getElementById("cpoints").innerHTML = "Computer Points: ";
+            //     document.getElementById("winner").innerHTML = "";
+            //     document.getElementById("ppoints").innerHTML = "User Points: ";
+
+            // }
+
+
+        
+
+
+    </script>
+</body>
+</html>
