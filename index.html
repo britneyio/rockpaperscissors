@@ -4,10 +4,18 @@
 
 <head>
     <title>Rock Paper Scissors</title>
+    
+    <style>
+        #main{
+            margin:auto;
+            width:50%;
+            font-family:sans-serif;
+        }
+    </style>
 </head>
 
 <body>
-
+    <div id="main">
     <h1>Rock Paper Scissors Game</h1>
     <p>Rules: First to 5 points wins!</p>
     <h3 id="ppoints">Player Points:</h3>
@@ -17,6 +25,7 @@
     <button onclick="editPageElements('scissors',computerPlay())">Scissors</button>
     <h3 id="pc">Computer chose: </h3>
     <h3 id="winner"></h3>
+    </div>
 
 
     <script type="text/javascript">
@@ -91,15 +100,11 @@
             document.getElementById("winner").innerHTML = playRound(element, computerSelected);
             document.getElementById("cpoints").innerHTML = "Computer Points: " + computerPoints;
             document.getElementById("ppoints").innerHTML = "User Points: " + userPoints;
-            if(userPoints > 5 || computerPoints > 5){
-
-                if(userPoints > computerPoints){
-                    alert("You win the entire game!");
-                }
-                else{
-                    alert("You lose the entire game!");
-                }
-                }
+            if(userPoints > 5){
+                alert("You win!");
+            }else{
+                alert("You lose!");
+            }
             
         }
     </script>
