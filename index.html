@@ -13,9 +13,9 @@
     <h2 id="round">Round #</h2>
     <h3 id="ppoints">Player Points:</h3>
     <h3 id="cpoints"> Computer Points:</h3>
-    <button onclick="parts('rock',computerPlay())">Rock</button>
-    <button onclick="parts('paper',computerPlay())">Paper</button>
-    <button onclick="parts('scissors',computerPlay())">Scissors</button>
+    <button onclick="editPageElements('rock',computerPlay())">Rock</button>
+    <button onclick="editPageElements('paper',computerPlay())">Paper</button>
+    <button onclick="editPageElements('scissors',computerPlay())">Scissors</button>
     <h3 id="pc">Computer chose: </h3>
     <h3 id="winner"></h3>
 
@@ -38,7 +38,9 @@
 
         let userPoints = 0;
         let computerPoints = 0;
-        function Round(playerSelection, computerSelection){
+
+
+        function playRound(playerSelection, computerSelection){
             playerSelection = playerSelection.toLowerCase();
             if(playerSelection == "rock"){
                 switch(computerSelection){
@@ -90,10 +92,10 @@
         }
 
 
-        function parts(element,computerSelected){
+        function editPageElements(element,computerSelected){
             
             document.getElementById("pc").innerHTML = "Computer's choice: " + computerSelected;
-            document.getElementById("winner").innerHTML = Round(element, computerSelected);
+            document.getElementById("winner").innerHTML = playRound(element, computerSelected);
             document.getElementById("cpoints").innerHTML = "Computer Points: " + computerPoints;
             document.getElementById("ppoints").innerHTML = "User Points: " + userPoints;
             if(userPoints > 3 || computerPoints > 3){
@@ -107,26 +109,6 @@
                 }
             
         }
-
-        
-           
-            
-
-            
-            
-            // document.getElementById("start").innerHTML = "Start game";
-            // if(document.getElementById("start").innerHTML == "Start game"){
-            //     document.getElementById("pc").innerHTML = "Computer's choice: ";
-            //     document.getElementById("cpoints").innerHTML = "Computer Points: ";
-            //     document.getElementById("winner").innerHTML = "";
-            //     document.getElementById("ppoints").innerHTML = "User Points: ";
-
-            // }
-
-
-        
-
-
     </script>
 </body>
 </html>
