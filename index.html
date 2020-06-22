@@ -111,9 +111,10 @@
             document.getElementById("winner").innerHTML = playRound(element, computerSelected);
             document.getElementById("cpoints").innerHTML = "Computer Points: " + computerPoints;
             document.getElementById("ppoints").innerHTML = "User Points: " + userPoints;
-            if(userPoints > 5){
+            if(userPoints == 5){
                 alert("You win!");
-            }else{
+            }
+            else if(computerPoints == 5){
                 alert("You lose!");
             }
             
